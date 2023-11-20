@@ -26,7 +26,7 @@ def extract_fbank_dir(dir):
         signal, sample_rate = librosa.core.load(wav_fn, sr=None)
         signal = preemphasis(signal, coeff=0.97)
         fbank = np.log(librosa.feature.melspectrogram(
-            y=signal, sr=sample_rate, n_mels=40,
+            signal, sr=sample_rate, n_mels=40,
             n_fft=int(np.floor(0.025*sample_rate)),
             hop_length=int(np.floor(0.01*sample_rate)), fmin=64, fmax=8000,
             ))
@@ -54,7 +54,7 @@ def extract_mfcc_dir(dir):
         signal, sample_rate = librosa.core.load(wav_fn, sr=None)
         signal = preemphasis(signal, coeff=0.97)
         mfcc = librosa.feature.mfcc(
-            y=signal, sr=sample_rate, n_mfcc=13, n_mels=24,  #dct_type=3,
+            signal, sr=sample_rate, n_mfcc=13, n_mels=24,  #dct_type=3,
             n_fft=int(np.floor(0.025*sample_rate)),
             hop_length=int(np.floor(0.01*sample_rate)), fmin=64, fmax=8000,
             #htk=True
