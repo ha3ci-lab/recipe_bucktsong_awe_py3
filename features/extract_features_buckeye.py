@@ -151,7 +151,7 @@ def main():
         print("Using existing file:", list_fn)
 
     # Extract word segments from the MFCC NumPy archives
-    for subset in ["devpart1"]:  # , "devpart2", "zs"]:
+    for subset in ["devpart1" , "devpart2", "zs"]:
         input_npz_fn = path.join(mfcc_dir, subset + ".dd.npz")
         output_npz_fn = path.join(mfcc_dir, subset + ".samediff2.dd.npz")
         if not path.isfile(output_npz_fn):
