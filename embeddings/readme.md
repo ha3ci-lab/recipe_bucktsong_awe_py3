@@ -29,15 +29,15 @@ Evaluate the model:
 
     # Validation
     ./apply_model.py \
-        models/buckeye.mfcc.gt/train_cae/60a4a9619e/cae.best_val.ckpt val
+        models/buckeye.mfcc.gt/train_cae/649e42d04d/cae.best_val.ckpt val
     ./eval_samediff.py --mvn \
-        models/buckeye.mfcc.gt/train_cae/60a4a9619e/cae.best_val.val.npz
+        models/buckeye.mfcc.gt/train_cae/649e42d04d/cae.best_val.val.npz
 
     # Test
     ./apply_model.py \
-        models/buckeye.mfcc.gt/train_cae/60a4a9619e/cae.best_val.ckpt test
+        models/buckeye.mfcc.gt/train_cae/649e42d04d/cae.best_val.ckpt test
     ./eval_samediff.py --mvn \
-        models/buckeye.mfcc.gt/train_cae/60a4a9619e/cae.best_val.test.npz
+        models/buckeye.mfcc.gt/train_cae/649e42d04d/cae.best_val.test.npz
 
 All the models trained below (including autoencoder and VAE models) can be
 evaluated using these scripts.
@@ -350,3 +350,17 @@ Test results:
 
     Validation AP mean: 0.1175 (+- 0.0039)
     Validation AP with normalisation mean: 0.1158 (+- 0.0027)
+
+
+
+
+
+./apply_model.py models/buckeye.mfcc.utd/train_cae/866780d95c/ae.best_val.ckpt val
+
+./eval_samediff.py --mvn models/buckeye.mfcc.utd/train_cae/866780d95c/ae.best_val.val.npz
+
+
+./apply_model.py models/buckeye.mfcc.utd/train_cae/866780d95c/ae.best_val.ckpt test
+
+./eval_samediff.py --mvn models/buckeye.mfcc.utd/train_cae/866780d95c/ae.best_val.test.npz
+
